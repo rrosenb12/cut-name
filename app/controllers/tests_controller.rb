@@ -13,11 +13,25 @@ class TestsController < ApplicationController
   end
 
   def create
-    @test = Test.create(test_params)
+    new_output_string = params[:input_string].split("")
+    final_output_string_array = []
+    counter = 1
+    new_output_string.each do |letter|
+      if counter % 3 == 0
+        final_output_string_array.append(letter)
+      end      
+      counter = counter + 1
+    end
+    final_output_string = final_output_string_array.join("")
+    @test = Test.create(
+      input_string: params[:input_string], 
+      output_string: final_output_string
+    )
     render json: @test
   end
 
   def test_params
     params.require(:test).permit(:input_string, :output_string)
   end
+
 end
