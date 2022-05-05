@@ -1,6 +1,7 @@
 class TestsController < ApplicationController
 
   skip_before_action :verify_authenticity_token
+  # before_action :create, :make_output_string
 
   def show
     @test = Test.find(params[:id])
@@ -13,10 +14,10 @@ class TestsController < ApplicationController
   end
 
   def create
-    new_output_string = params[:input_string].split("")
-    final_output_string_array = []
-    counter = 1
-    new_output_string.each do |letter|
+     new_output_string = params[:input_string].split("")
+     final_output_string_array = []
+     counter = 1
+     new_output_string.each do |letter|
       if counter % 3 == 0
         final_output_string_array.append(letter)
       end      
