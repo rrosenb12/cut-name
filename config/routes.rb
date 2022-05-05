@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'tests/new'
-  get 'tests/show'
-  # get 'tests/create'
-  post 'tests/create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  resources :tests 
+
 end
