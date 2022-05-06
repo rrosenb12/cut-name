@@ -15,15 +15,15 @@ class Test < ApplicationRecord
         #@final_output_string = final_output_string_array.join("")
     #end
 
-    def input_string=(input_string)
-        super(input_string)
-        self.output_string = generate_output(input_string)
+    def string_to_cut=(string_to_cut)
+        super(string_to_cut)
+        self.return_string = generate_output(string_to_cut)
     end
 
     private
 
-    def generate_output(input_string)
-      new_output_string = input_string.split("")
+    def generate_output(string_to_cut)
+      new_output_string = string_to_cut.split("")
       final_output_string_array = []
       counter = 1
       new_output_string.each do |letter|

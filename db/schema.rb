@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_04_235149) do
+ActiveRecord::Schema.define(version: 2022_05_06_014211) do
 
   create_table "tests", force: :cascade do |t|
-    t.string "input_string"
-    t.string "output_string"
+    t.string "string_to_cut"
+    t.string "return_string"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

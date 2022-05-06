@@ -32,12 +32,12 @@ class TestsController < ApplicationController
 #  end
 
   def create
-    @test = Test.create(input_string: params[:input_string])
+    @test = Test.create(string_to_cut: params[:string_to_cut])
     render json: @test
   end
 
   def test_params
-    params.require(:test).permit(:input_string, :output_string)
+    params.require(:test).permit(:string_to_cut, :return_string)
   end
 
 end
