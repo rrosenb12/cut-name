@@ -37,7 +37,7 @@ class TestsController < ApplicationController
   end
 
   def test_params
-    params.require(:test).permit(:string_to_cut, :return_string)
+    params.require(:test).permit(:string_to_cut)
   end
 
 end
