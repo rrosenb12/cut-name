@@ -1,0 +1,10 @@
+<h1>Let's Cut That String!</h1>
+
+<%= form_with url: "/test", method: :post do |f|%>
+    <%= f.label "Enter a String to Cut" %>
+    <%= f.text_field :string_to_cut %>
+
+    <%= f.submit "Cut It Up" %>
+
+<h3>Cut String:</h3>
+<% end %>
